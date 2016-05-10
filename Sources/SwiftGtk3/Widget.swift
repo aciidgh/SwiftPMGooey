@@ -6,7 +6,7 @@ import CGtk
 
 public class Widget {    
     private var signals: [(UInt, Any)] = []
-    var widgetPointer: UnsafeMutablePointer<GtkWidget>!
+    public var widgetPointer: UnsafeMutablePointer<GtkWidget>!
     
     public weak var parentWidget: Widget? {
         willSet {
