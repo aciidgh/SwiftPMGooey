@@ -4,6 +4,20 @@
 
 import CGtk
 
+public enum Orientation {
+    case Horizontal
+    case Vertical
+
+    public func toGtkOrientation() -> GtkOrientation {
+        switch self {
+        case .Horizontal:
+            return GTK_ORIENTATION_HORIZONTAL
+        case .Vertical:
+            return GTK_ORIENTATION_VERTICAL
+        }
+    }
+}
+
 extension gboolean {
     func toBool() -> Bool {
         return self >= 1

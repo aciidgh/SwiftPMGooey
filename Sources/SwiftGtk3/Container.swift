@@ -6,7 +6,11 @@ import CGtk
 
 public class Container: Widget {
     private (set) var widgets: [Widget] = []
-    
+
+    override public init() {
+        super.init()   
+    }
+ 
     public func add(widget: Widget) {
         widgets.append(widget)
         widget.parentWidget = self
