@@ -8,7 +8,7 @@ class RootController: WidgetController {
     var currentController: WidgetController
 
     init() {
-        currentController = graphController
+        currentController = buildController 
         super.init(orientation: .Horizontal)
 
         let leftPanel = Box(orientation: .Vertical)
@@ -24,7 +24,7 @@ class RootController: WidgetController {
         leftPanel.add(widget: tab2)
         box.add(widget: leftPanel)
 
-        box.add(widget: currentController.box)
+        box.add(widget: currentController.box, expand: true, fill: true)
     }
 
     //FIXME: this is messed up and leaking memory.
@@ -33,7 +33,7 @@ class RootController: WidgetController {
         g_object_ref(currentController.box.widgetPointer)
         box.remove(widget: oldController.box)
         currentController = controller
-        box.add(widget: currentController.box)
+        box.add(widget: currentController.box, expand: true, fill: true)
         currentController.box.showAll()
     }
 }

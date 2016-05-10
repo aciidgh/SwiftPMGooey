@@ -5,7 +5,7 @@
 import CGtk
 
 public class Container: Widget {
-    private (set) var widgets: [Widget] = []
+    var widgets: [Widget] = []
 
     override public init() {
         super.init()   
