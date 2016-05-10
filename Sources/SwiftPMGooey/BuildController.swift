@@ -15,7 +15,7 @@ class BuildController: WidgetController {
 
     func buildButtonPressed(btn: Button) {
         
-        let buffer = gtk_text_view_get_buffer(UnsafeMutablePointer(textView.widgetPointer))
+        let buffer = gtk_text_view_get_buffer(UnsafeMutablePointer(textView.widgetPointer))!
         print(buffer.pointee)
 
         let task = NSTask()
