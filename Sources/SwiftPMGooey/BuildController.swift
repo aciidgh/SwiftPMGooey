@@ -27,6 +27,7 @@ class BuildController: WidgetController {
         task.standardOutput = pipe
         task.launch()
         repeat {
+
             let output = String(data: pipe.fileHandleForReading.availableData, encoding: NSUTF8StringEncoding)!
             gtk_text_buffer_insert_at_cursor(buffer, output, Int32(output.characters.count))
             print(output)
